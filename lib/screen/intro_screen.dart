@@ -103,7 +103,7 @@ class _InitialScreenState extends State<InitialScreen> {
                   backgroundColor: Colors.red,
                   minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius: BorderRadius.circular(12),
                   ),
                 ),
                 child: const Text(

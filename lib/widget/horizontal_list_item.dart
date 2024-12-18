@@ -1,8 +1,8 @@
 
-import 'package:books_realism_app/model/book.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../repository/bookList.dart';
 import '../screen/book_details_screen.dart';
 
 class HorizontalListItem extends StatelessWidget {

@@ -1,6 +1,8 @@
-import 'package:books_realism_app/model/book.dart';
+import 'package:books_realism_app/repository/bookRecommendedList.dart';
+import 'package:books_realism_app/widget/vertical_list_item.dart';
 import 'package:flutter/material.dart';
 
+import '../repository/bookList.dart';
 import '../widget/horizontal_list_item.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -43,7 +45,22 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 35
+              height: 3
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'Recomendados',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                    ),
+                  )
+                ],
+              ),
             ),
             Padding(padding: const EdgeInsets.symmetric(horizontal: 13),
             child : Row(
@@ -59,7 +76,11 @@ class DashboardScreen extends StatelessWidget {
               ],
             ),
             ),
-            Container(height: 500
+            ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              physics: const AlwaysScrollableScrollPhysics(),
+              itemCount: bookRecommendedList.length,
+              itemBuilder: (ctx, i) => VerticalListItem(i),
             )
           ],
         ),

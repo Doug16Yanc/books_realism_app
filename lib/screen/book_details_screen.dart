@@ -44,7 +44,7 @@ class BookDetailsScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              routeArgs?['title'] ?? 'No Title',
+              routeArgs?['title'] ?? '',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -59,12 +59,12 @@ class BookDetailsScreen extends StatelessWidget {
                 _buildCard(
                   context,
                   icon: Icons.timer,
-                  text: routeArgs?['author'] ?? 'Unknown Author',
+                  text: routeArgs?['author'] ?? '',
                 ),
                 _buildCard(
                   context,
                   icon: Icons.calendar_today,
-                  text: routeArgs?['year'] ?? 'N/A',
+                  text: routeArgs?['year'] ?? '',
                 ),
                 _buildCard(
                   context,
@@ -75,7 +75,7 @@ class BookDetailsScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              routeArgs?['description'] ?? 'No Description Available',
+              routeArgs?['description'] ?? '',
               style: TextStyle(
                 fontSize: 18,
                 height: 1.5,
