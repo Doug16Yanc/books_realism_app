@@ -68,7 +68,7 @@ final bookList = [
       title: 'Madame Bovary',
       author: 'Gustave Flaubert',
       country: 'França',
-      imageUrl: 'https://biblioteca.letras.ufrj.br/wp-content/uploads/2023/10/image-23.png',
+      imageUrl: 'https://cdn.kobo.com/book-images/04ac911e-989b-46e2-902f-f8b7f3ab13a1/1200/1200/False/madame-bovary-471.jpg',
       description: 'Emma Bovary é uma leitora ávida. Criada no campo e educada em um convento, nutre sonhos ambiciosos,'
           ' inspirados pela burguesia e romance dos livros. Decidida a buscar novos horizontes, se casa com Charles, '
           'um médico interiorano apaixonado pela esposa, mas carecido de ambições. O casal acaba se mudando para outra '

@@ -1,22 +1,24 @@
-import 'package:books_realism_app/screen/dashboard_screen.dart';
 import 'package:books_realism_app/screen/intro_screen.dart';
+import 'package:books_realism_app/screen/book_details_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter App',
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.deepPurple,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home : IntroScreen(),
+      home: IntroScreen(),
       routes: {
-
+        '/book-details': (context) => BookDetailsScreen(),
       },
     );
   }

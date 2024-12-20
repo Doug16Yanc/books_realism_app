@@ -34,8 +34,7 @@ class _InitialScreenState extends State<InitialScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 100),
-            const SizedBox(height: 20),
+            const SizedBox(height: 100),
             Image.asset(
               'images/fundo.png',
               fit: BoxFit.cover,
@@ -68,7 +67,7 @@ class _InitialScreenState extends State<InitialScreen> {
               textAlign: TextAlign.center,
             ),
             const Text(
-              'vulgaridade e sujeira',
+              'da burguesia urbana',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -77,7 +76,7 @@ class _InitialScreenState extends State<InitialScreen> {
               textAlign: TextAlign.center,
             ),
             const Text(
-              'da sociedade do século 19,',
+              'do fatídico século 19.',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -85,29 +84,20 @@ class _InitialScreenState extends State<InitialScreen> {
               ),
               textAlign: TextAlign.center,
             ),
-            const Text(
-              'pois não bastam a sua!',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 34),
               child: ElevatedButton(
                 onPressed: widget.onClick,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  minimumSize: Size(double.infinity, 50),
+                  backgroundColor: Colors.deepPurple,
+                  minimumSize: Size(double.infinity, 60),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
                 child: const Text(
-                  'Vamos iniciar',
+                  'Vamos realizar',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 25,

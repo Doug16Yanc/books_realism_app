@@ -40,7 +40,7 @@ class VerticalListItem extends StatelessWidget {
                      height: 130,
                      width: 110,
                      decoration: BoxDecoration(
-                       borderRadius: BorderRadius.only(
+                       borderRadius: const BorderRadius.only(
                          bottomLeft: Radius.circular(7),
                          topLeft: Radius.circular(7)
                        ),
@@ -54,27 +54,27 @@ class VerticalListItem extends StatelessWidget {
                  ),
                  Container(
                    padding: const EdgeInsets.all(15),
-                   height: 120,
+                   height: 150,
                    child: Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: <Widget>[
                        Text(
                          bookRecommendedList[index].title,
-                         style: TextStyle(
+                         style: const TextStyle(
                            fontSize: 19,
                            fontWeight: FontWeight.bold
                          ),
                        ),
-                       SizedBox(
+                       const SizedBox(
                          height: 2,
                        ),
                        Container(
                          width: 200,
                          child : Text(
-                           bookRecommendedList[index].author
+                           "${bookRecommendedList[index].author} - ${bookRecommendedList[index].country}"
                          ),
                        ),
-                       SizedBox(
+                     /*  const SizedBox(
                          height: 2
                        ),
                        Container(
@@ -82,8 +82,8 @@ class VerticalListItem extends StatelessWidget {
                          child : Text(
                           bookRecommendedList[index].country
                          ),
-                       ),
-                       SizedBox(
+                       ), */
+                       const SizedBox(
                          height: 2
                        ),
                        Container(
@@ -99,7 +99,7 @@ class VerticalListItem extends StatelessWidget {
              ),
            ),
          ),
-         SizedBox(
+         const SizedBox(
            height: 12,
          )
        ],

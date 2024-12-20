@@ -5,14 +5,15 @@ class BookDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final routeArgs = ModalRoute.of(context)?.settings.arguments as Map<String, String>?;
-    final isbn = routeArgs?['isbn'] ?? '';
-    final rating = routeArgs?['rating'] ?? '';
+    final routeArgs = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    final isbn = routeArgs?['isbn']?.toString() ?? '';
+    final rating = routeArgs?['rating']?.toString() ?? '';
+    final year = routeArgs?['year']?.toString() ?? '';
 
     return Scaffold(
-      backgroundColor: Color(0xfff4f4f4),
+      backgroundColor: const Color(0xfff4f4f4),
       appBar: AppBar(
-        backgroundColor: Color(0xfff4f4f4),
+        backgroundColor: const Color(0xfff4f4f4),
         elevation: 0,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       ),
@@ -27,7 +28,7 @@ class BookDetailsScreen extends StatelessWidget {
               child: Card(
                 elevation: 5,
                 child: Hero(
-                  tag: isbn,
+                  tag: isbn.isNotEmpty ? isbn : 'placeholder-tag',
                   child: Container(
                     height: 450,
                     width: 300,
@@ -35,52 +36,61 @@ class BookDetailsScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5),
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage(routeArgs?['imageUrl'] ?? ''),
+                        image: NetworkImage(
+                          routeArgs?['imageUrl'] ??
+                              '',
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               routeArgs?['title'] ?? '',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.5,
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                _buildCard(
-                  context,
-                  icon: Icons.timer,
-                  text: routeArgs?['author'] ?? '',
+                Expanded(
+                  child: _buildCard(
+                    context,
+                    icon: Icons.edit,
+                    text: routeArgs?['author'] ?? '',
+                  ),
                 ),
-                _buildCard(
-                  context,
-                  icon: Icons.calendar_today,
-                  text: routeArgs?['year'] ?? '',
+                Expanded(
+                  child: _buildCard(
+                    context,
+                    icon: Icons.calendar_today,
+                    text: year,
+                  ),
                 ),
-                _buildCard(
-                  context,
-                  icon: Icons.star_border,
-                  text: '$rating/10',
+                Expanded(
+                  child: _buildCard(
+                    context,
+                    icon: Icons.star_border,
+                    text: '$rating/10',
+                  ),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               routeArgs?['description'] ?? '',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 height: 1.5,
               ),
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.justify,
             ),
           ],
         ),
@@ -103,10 +113,10 @@ class BookDetailsScreen extends StatelessWidget {
               size: 45,
               color: Theme.of(context).primaryColor,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               text,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
           ],
         ),

@@ -49,12 +49,12 @@ class HorizontalListItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
                 height: 15
             ),
             Text(
               bookList[index].title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold
               ),
