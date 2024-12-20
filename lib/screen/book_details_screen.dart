@@ -78,7 +78,7 @@ class BookDetailsScreen extends StatelessWidget {
                   child: _buildCard(
                     context,
                     icon: Icons.star_border,
-                    text: '$rating/10',
+                    text: '$rating/5',
                   ),
                 ),
               ],
